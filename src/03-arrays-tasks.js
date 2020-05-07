@@ -36,10 +36,9 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-  let arr = new Array(len);   
+  const arr = Array.from({ length: len }, (_, i) => i * 2 + 1);
   return arr;
 }
-
 
 /**
  * Returns the doubled array - elements of the specified array
@@ -54,8 +53,8 @@ function generateOdds(len) {
  *    [] => []
  */
 function doubleArray(arr) {
-  let newArr = [...arr, ...arr];
-   return newArr;
+  const newArr = [...arr, ...arr];
+  return newArr;
 }
 
 
@@ -71,7 +70,7 @@ function doubleArray(arr) {
  *    [] => []
  */
 function getArrayOfPositives(arr) {
-  return arr.filter(val => val >= 0);
+  return arr.filter((val) => val > 0);
 }
 
 /**
@@ -98,10 +97,10 @@ function getArrayOfStrings(arr) {
  * @return {array}
  *
  * @example
- *     => [ 'cat', true ]
+ *     [ 0, false, 'cat', NaN, true, '' ] => [ 'cat', true ]
  *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
  *    [ false, 0, NaN, '', undefined ]   => [ ]
- */[ 0, false, 'cat', NaN, true, '' ]
+ */
 function removeFalsyValues(arr) {
   return arr.filter(Boolean);
 }
@@ -118,7 +117,7 @@ function removeFalsyValues(arr) {
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
 function getUpperCaseStrings(arr) {
-  let newArr = arr.map((i) => i.toUpperCase());
+  const newArr = arr.map((i) => i.toUpperCase());
   return newArr;
 }
 
@@ -134,7 +133,7 @@ function getUpperCaseStrings(arr) {
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
-  let newArr = arr.map((i) => i.length);
+  const newArr = arr.map((i) => i.length);
   return newArr;
 }
 
