@@ -52,7 +52,7 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return (value1 + value2)/2;
+  return (value1 / 2) + (value2 / 2);
 }
 
 /**
@@ -71,7 +71,7 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-  return Math.hypot(x2 - x1, y2 - y1);;
+  return Math.hypot(x2 - x1, y2 - y1);
 }
 
 /**
@@ -110,8 +110,8 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-  let tan1 = Math.atan2(y1, x1);
-  let tan2 = Math.atan2(y2, x2);
+  const tan1 = Math.atan2(y1, x1);
+  const tan2 = Math.atan2(y2, x2);
   return Math.abs(tan1 - tan2);
 }
 
@@ -128,7 +128,9 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  throw new Error('Not implemented');
+  const str = value.toString();
+  const lastDigit = str.charAt(str.length - 1);
+  return parseInt(lastDigit, 10);
 }
 
 
@@ -182,7 +184,7 @@ function getParallelipidedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-  let powerTen = 10 ** pow;
+  const powerTen = 10 ** pow;
   return powerTen * Math.round(num / powerTen);
 }
 
@@ -204,12 +206,13 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-  if(n < 2) return false;
-    for (var i = 2; i < n; i++) {
-        if(n%i==0)
-            return false;
-    }
-    return true;
+  if (n <= 3) return true;
+  if (n % 2 === 0) return false;
+  if (n % 3 === 0) return false;
+  for (let i = 5; i <= Math.sqrt(n); i += 2) {
+    if (n % i === 0) return false;
+  }
+  return true;
 }
 
 /**
