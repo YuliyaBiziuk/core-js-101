@@ -1,4 +1,4 @@
-l/* *******************************************************************************************
+/* *******************************************************************************************
  *                                                                                           *
  * Plese read the following tutorial before implementing tasks:                              *
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String   *
@@ -52,7 +52,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-  return(`Hello, ${firstName} ${lastName}!`);
+  return (`Hello, ${firstName} ${lastName}!`);
 }
 
 /**
@@ -96,7 +96,7 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-  return value.trin( );
+  return value.trim();
 }
 
 /**
@@ -203,7 +203,11 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-  
+  const top = '┌'.concat('─'.repeat(width - 2)).concat('┐\n');
+  const bottom = '└'.concat('─'.repeat(width - 2)).concat('┘\n');
+  const center = '│'.concat(' '.repeat(width - 2)).concat('│\n');
+  const middle = center.repeat(height - 2);
+  return `${top}${middle}${bottom}`;
 }
 
 
